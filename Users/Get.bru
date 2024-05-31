@@ -1,0 +1,19 @@
+post {
+  url: {{baseUrl}
+}
+ 
+body {
+  {
+        "jsonrpc": "2.0+hl",
+        "id": 1,
+        "method": "cdr:user:get",
+        "version": 1,
+        "params": {},
+        "auth": {
+        }
+  }
+}
+ 
+headers {
+  content-type: application/json
+}
