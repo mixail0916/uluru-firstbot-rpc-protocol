@@ -1,29 +1,29 @@
 meta {
-  name: Add BME Admin Association
+  name: List users associated with a BME as volunteers
   type: http
   seq: 1
 }
 
 post {
   url: {{API_ROOT}}
-  body: json
-  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body:json {
+body {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:association:add",
+    "method": "cdr:bme:association:list",
     "version": 1,
     "params": {
-      "association_type": "bme+admin",
-        "bme_id": "6651be8c86bd50579bfd9f63",
-        "email": "bot@h.l"
+	   "association_type": "bme+volunteer",
+		"search":"b",
+		"bme_id": "6651be9186bd50579bfd9f7d",
+		"status": ["active"],
+		"next_page": null
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",

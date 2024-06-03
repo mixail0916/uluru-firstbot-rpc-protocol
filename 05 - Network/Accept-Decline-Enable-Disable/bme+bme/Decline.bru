@@ -1,5 +1,5 @@
 meta {
-  name: Add BME Admin Association
+  name: Decline
   type: http
   seq: 1
 }
@@ -18,12 +18,12 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:association:add",
+    "method": "cdr:association:invitation:decline",
     "version": 1,
     "params": {
-      "association_type": "bme+admin",
-        "bme_id": "6651be8c86bd50579bfd9f63",
-        "email": "bot@h.l"
+		"association_type": "bme+bme",
+		"association_id": "6650650cc8096c918bab0fb9",
+		"bme_id": "661fdb33e2977a139250ed0a"
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
