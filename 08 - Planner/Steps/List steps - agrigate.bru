@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: List steps - agrigate
   type: http
   seq: 1
 }
@@ -18,12 +18,17 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:list",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"list_type": "aggregation_for_bme",
+		"date_range": {
+			"start": "2024-10-01",
+			"end": "2024-10-31"
+		},
+		"ref_bme_id": "6634967363473c1d6f29424e",
+		"next_page": null
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

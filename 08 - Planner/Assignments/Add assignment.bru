@@ -1,0 +1,39 @@
+meta {
+  name: Add assignment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:assignment:add",
+    "version": 1,
+    "params": {
+		"ref_bme_id": "6651be8c86bd50579bfd9f63",
+		"action_id": "6658a05474c8990616883fe1",
+		"action_step_id": "6658a06474c8990616883fe6",
+		"assignee_user_id": "66589c0074c8990616883fba",
+		"when": {
+			"2024-07-15": ["15:30"],
+            "2024-07-11": ["08:30","11:30","18:30"],
+			"2024-07-16": ["08:30","11:30","18:30"]
+		}
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

@@ -6,22 +6,24 @@ meta {
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
     "method": "cdr:region:add",
     "version": 1,
     "params": {
-    	"title": "City of Hamilton",
-    	"country_code": "CAN",
-    	"tz": "America/Winnipeg"
+      "title": "City of Hamilton22",
+      "country_code": "CAN",
+      "tz": "America/Winnipeg"
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
@@ -29,4 +31,3 @@ body {
     }
   }
 }
-

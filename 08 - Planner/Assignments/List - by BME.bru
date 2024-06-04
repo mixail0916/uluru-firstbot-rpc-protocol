@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: List - by BME
   type: http
   seq: 1
 }
@@ -18,12 +18,16 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:assignment:list",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"list_type": "by_bme",
+		"ref_bme_id": "6651be8c86bd50579bfd9f63",
+		"action_id": "6658a05474c8990616883fe1",
+		"action_step_id": "6658a06474c8990616883fe6",
+        "date": "2024-06-15",
+		"next_page": null
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

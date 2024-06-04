@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: Discarded Step
   type: http
   seq: 1
 }
@@ -18,12 +18,13 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:discard",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"ref_bme_id": "6651be8f86bd50579bfd9f70",
+		"action_id": "6654a507560e05b10cc8a87e",
+		"action_step_id": "6654a51a560e05b10cc8a887"
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

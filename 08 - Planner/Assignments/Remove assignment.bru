@@ -1,0 +1,38 @@
+meta {
+  name: Remove assignment
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:assignment:remove",
+    "version": 1,
+    "params": {
+		"ref_bme_id": "6634967363473c1d6f29424e",
+		"action_id": "664b033357d7603dfbff0e5a",
+		"action_step_id": "664e121dffe23e1a4d8b997c",
+		"assignee_user_id": "663496a463473c1d6f2943a7",
+	    "when": {
+			"2024-05-10": ["15:30"],
+            "2024-06-28": ["18:30"]
+		}
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

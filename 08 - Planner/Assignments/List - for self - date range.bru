@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: List - for self - date range
   type: http
   seq: 1
 }
@@ -18,12 +18,16 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:assignment:list",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"list_type": "for_self",
+		"date_range": {
+			"start": "2024-04-25",
+			"end": "2024-05-25"
+		},
+		"next_page": null
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

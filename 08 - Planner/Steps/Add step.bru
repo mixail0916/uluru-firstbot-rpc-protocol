@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: Add step
   type: http
   seq: 1
 }
@@ -18,12 +18,13 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:add",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"ref_bme_id": "6651be8c86bd50579bfd9f63",
+		"action_id": "6658a05474c8990616883fe1",
+		"step_name": "transport_regional"
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

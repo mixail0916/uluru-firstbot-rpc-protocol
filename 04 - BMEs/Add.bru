@@ -6,30 +6,32 @@ meta {
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
     "method": "cdr:bme:add",
     "version": 1,
     "params": {
-	"activity_tags": [
-			"womens_shelter",
-			"retail_vendor"
-		],
-		"region_id": "661fda5b8ca6b45403ad60b9",
-		"name": "Test test test",
-		"address": "55 Front St W, Toronto, ON M5J",
-		"geoloc": {
-			"longitude": -69.3711296,
-			"latitude": 42.6411512
-		}
+    "activity_tags": [
+        "womens_shelter",
+        "retail_vendor"
+      ],
+      "region_id": "665ed77a9cc1b3e8fe9d2cc1",
+      "name": "Test test test",
+      "address": "55 Front St W, Toronto, ON M5J",
+      "geoloc": {
+        "longitude": -69.3711296,
+        "latitude": 42.6411512
+      }
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
@@ -37,4 +39,3 @@ body {
     }
   }
 }
-

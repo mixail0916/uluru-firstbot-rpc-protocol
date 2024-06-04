@@ -1,0 +1,45 @@
+meta {
+  name: Meeting - Onsite - Map
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:attribute:set",
+    "version": 1,
+    "params": {
+	   	"ref_bme_id": "6651be8f86bd50579bfd9f70",
+       		"action_id": "665459208827e4a6f86f0c2c",
+       		"action_step_id": "6654643b736ce19a306ba7c7",
+       		"attributes": {
+       			"agenda": "some agenупкыаупквераапыуввеачссраda",
+       			"site": {
+       				"address": "Some street, some city",
+       				"longitude": -79.721363,
+       				"latitude": 43.228062
+       			},
+       			"duration": {
+       				"hours": 1,
+       				"minutes": 30
+       			}
+       		}
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

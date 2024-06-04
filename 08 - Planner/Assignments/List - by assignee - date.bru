@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: List - by assignee - date
   type: http
   seq: 1
 }
@@ -18,12 +18,14 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:assignment:list",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+	    "list_type": "by_assignee",
+		"ref_bme_id": "66506ce80f63441ea232d67a",
+		"assignee_user_id": "66506d140f63441ea232d7bd",
+		"date": "2024-04-19"
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

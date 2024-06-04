@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: List - by step aggregate
   type: http
   seq: 1
 }
@@ -18,12 +18,14 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:assignment:list",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+	   "list_type": "by_step_aggregate",
+		"action_id": "66422b83bd39b02858d0f3cf",
+		"action_step_id": "66422b9fbd39b02858d0f3d4",
+		"next_page": null
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

@@ -1,0 +1,41 @@
+meta {
+  name: Meeting - Online
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:attribute:set",
+    "version": 1,
+    "params": {
+	    "ref_bme_id": "662451c4f259eb5761cb381b",
+		"action_id": "66259707b63b9c6c26795933",
+		"action_step_id": "66262d3eb71c820be0d3fb18",
+		"attributes": {
+			"link": "https://google.com",
+			"agenda": "some agenda",
+			"duration": {
+				"hours": 1,
+				"minutes": 30
+			}
+		}
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

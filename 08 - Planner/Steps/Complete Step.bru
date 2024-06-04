@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: Complete Step
   type: http
   seq: 1
 }
@@ -18,12 +18,13 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:complete",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+		"ref_bme_id": "6651be8f86bd50579bfd9f70",
+		"action_id": "665459208827e4a6f86f0c2c",
+		"action_step_id": "66546006128937cea97821e9"
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"

@@ -1,5 +1,5 @@
 meta {
-  name: Edit
+  name: Get - by id
   type: http
   seq: 1
 }
@@ -18,12 +18,14 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:user:edit",
+    "method": "cdr:action:step:assignment:get",
     "version": 1,
     "params": {
-      "first_name": "New name2",
-      "last_name": "Last nam2"
-      },
+	    "get_type": "by_id",
+		"action_step_assignment_id": "665073b124f9250b2cd8e481",
+		"action_id": "66506e264bf2055b4ded61d1",
+		"action_step_id": "665072c424f9250b2cd8e47e"
+    },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"
