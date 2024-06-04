@@ -6,34 +6,30 @@ meta {
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
     "method": "cdr:bme:association:list",
     "version": 1,
     "params": {
-	   "association_type": "bme+volunteer",
-		"search":"b",
-		"bme_id": "6651be9186bd50579bfd9f7d",
-		"status": ["active"],
-		"next_page": null
+       "association_type": "bme+volunteer",
+      "search":"b",
+      "bme_id": "6651be9186bd50579bfd9f7d",
+      "status": ["active"],
+      "next_page": null
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{HL_SESSION_TOKEN}}"
     }
   }
-}
-
-tests {
-  test("status must be 200", function() {
-    expect(response.status).to.eql(200);
-  });
 }

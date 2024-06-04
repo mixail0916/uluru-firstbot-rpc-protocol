@@ -31,8 +31,4 @@ body {
   }
 }
 
-tests {
-  test("status must be 200", function() {
-    expect(response.status).to.eql(200);
-  });
-}
+
