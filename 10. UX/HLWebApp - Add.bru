@@ -1,0 +1,32 @@
+meta {
+  name: HLWebApp - Add
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlwebapp:supply:view:add",
+    "version": 1,
+    "params": {
+	   	"title": "test view",
+       	"bme_id": "65dc0be7734cf719a399c917"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+meta {
+  name: HLWebApp - Remove
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlwebapp:supply:view:remove",
+    "version": 1,
+    "params": {
+	    "supply_view_id": "65e512ad6dd702d5240dc7e8",
+      	"bme_id": "65e3eb9cf71ef2afc91cd8e6"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}
