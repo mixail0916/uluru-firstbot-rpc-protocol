@@ -1,0 +1,44 @@
+meta {
+  name: Set - for BME, By BME
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:availability:set",
+    "version": 1,
+    "params": {
+     		"availability_type": "for_bme_by_bme",
+     		"bme_id": "662451c4f259eb5761cb381b",
+     		 "days": {
+     			"sun": {
+     				"times": {
+     					"09:00": {
+     						"enabled": true
+     					},
+     					"10:00": {
+     						"enabled": false
+     					}
+     				}
+     			}
+     		}
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{HL_SESSION_TOKEN}}"
+    }
+  }
+}

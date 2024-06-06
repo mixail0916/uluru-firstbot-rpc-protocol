@@ -1,5 +1,5 @@
 meta {
-  name: Add step
+  name: List - Num users on date timeslot
   type: http
   seq: 1
 }
@@ -18,12 +18,16 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:action:step:add",
+    "method": "cdr:availability:list",
     "version": 1,
     "params": {
-      "ref_bme_id": "6651be8c86bd50579bfd9f63",
-      "action_id": "665f347c68b2af30d5864e65",
-      "step_name": "transport_regional"
+            "list_type": "num_users_on_date_timeslot",
+      		"bme_id": "660e193057798388c05e530b",
+      		"date": "2024-04-25",
+      		"capabilities": [
+      			"general_volunteering",
+      			"driving"
+      		]
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
