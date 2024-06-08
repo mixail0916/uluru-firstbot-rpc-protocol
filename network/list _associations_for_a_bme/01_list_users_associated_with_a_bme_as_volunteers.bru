@@ -1,5 +1,5 @@
 meta {
-  name: List - by BME
+  name: List users associated with a BME as volunteers
   type: http
   seq: 1
 }
@@ -18,14 +18,13 @@ body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:action:step:assignment:list",
+    "method": "cdr:bme:association:list",
     "version": 1,
     "params": {
-      "list_type": "by_bme",
-      "ref_bme_id": "66640c4c7c9a4fd5163e7bfb",
-      "action_id": "66640ee27c9a4fd5163e7ff6",
-      "action_step_id": "66640f087c9a4fd5163e7ffb",
-        "date": "2024-07-15",
+       "association_type": "bme+volunteer",
+      "search":"b",
+      "bme_id": "6651be8c86bd50579bfd9f63",
+      "status": ["active"],
       "next_page": null
     },
     "auth": {

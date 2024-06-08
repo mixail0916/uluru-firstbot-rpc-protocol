@@ -1,0 +1,38 @@
+meta {
+  name: Challenge Reply
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_ROOT}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlwebapp:sign_in:challenge_reply",
+    "version": 1,
+    "params": {
+      "challenge_code": "123456",
+      "reply_token": "{{REPLY_TOKEN}}"
+    },
+    "auth": {}
+  }
+}
+
+script:post-response {
+  bru.setVar("SESSION_TOKEN", res.body.result.token);
+  bru.setVar("AUTH_TYPE", res.body.result.type);
+}
+
+
+
+
+
+

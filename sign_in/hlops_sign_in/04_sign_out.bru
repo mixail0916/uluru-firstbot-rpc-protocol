@@ -1,0 +1,29 @@
+meta {
+  name: Sign out
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_ROOT}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlops:sign_out",
+    "version": 1,
+    "params": {},
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}
+
+

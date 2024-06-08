@@ -1,0 +1,34 @@
+meta {
+  name: Init
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ADMIN_ROOT}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlops:sign_in:init",
+    "version": 1,
+    "params": {
+      "email": "bot@h.l"
+    },
+    "auth": {}
+  }
+}
+
+
+script:post-response {
+  bru.setVar("AUTH_TYPE", "hlops");
+  bru.setVar("REPLY_TOKEN", res.body.result.reply_token);
+  bru.setVar("RECHALLENGE_TOKEN", res.body.result.rechallenge_token);
+}
+

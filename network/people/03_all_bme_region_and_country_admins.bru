@@ -1,0 +1,46 @@
+meta {
+  name: All BME, Region and Country Admins
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_ROOT}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:association:list",
+    "version": 1,
+    "params": {
+		  "search":"",
+      "association_type": [
+        "bme+admin",
+        "geoscope_region+admin",
+        "geoscope_country+admin"
+      ],
+      "status": [
+        "active",
+        "pending"
+      ],
+      "continent_code": [
+        "northamerica"
+      ],
+      "country_code": [
+        "CAN"
+      ],
+      "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}
+

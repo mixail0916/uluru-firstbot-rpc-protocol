@@ -1,0 +1,33 @@
+meta {
+  name: All Employees from All BMEs
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_ROOT}}
+}
+
+headers {
+  content-type: application/json
+}
+
+body {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:association:list",
+    "version": 1,
+    "params": {
+		  "association_type": "bme+employee",
+		  "bme_id": ["660e193057798388c05e530b"],
+		  "status": ["active", "pending"],	
+		  "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}
+
