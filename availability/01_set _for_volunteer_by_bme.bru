@@ -20,103 +20,103 @@ body:json {
     "id": 1,
     "method": "cdr:availability:set",
     "version": 1,
-   	"params": {
-   		"availability_type": "for_volunteer_by_bme",
-        "year": 2024,
-   		"month": 5,
-   		"bme_id": "6651be9186bd50579bfd9f7d",
-   		"user_id": "6651bece86bd50579bfda11c",
-   		"days": {
-   	    "9": {
-   				"times": {
-   					"09:00": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": true
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"09:30": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"10:00": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"10:30": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					}
-   				}
-   			},
-   			"10": {
-   				"times": {
-   					"09:00": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"09:30": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"10:00": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					},
-   					"10:30": {
-   						"capabilities": {
-   							"general_volunteering": {
-   								"enabled": false
-   							},
-   							"driving": {
-   								"enabled": false
-   							}
-   						}
-   					}
-   				}
-   			}
-   		}
-   	},
+     "params": {
+       "availability_type": "for_volunteer_by_bme",
+      "year": 2024,
+       "month": 6,
+       "bme_id": "666447987c9a4fd5163e803a",
+       "user_id": "666448087c9a4fd5163e81a5",
+       "days": {
+         "9": {
+           "times": {
+             "09:00": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": true
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             },
+             "09:30": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             },
+             "10:00": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             },
+             "10:30": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             }
+           }
+         },
+         "10": {
+           "times": {
+             "09:00": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             },
+             "09:30": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             },
+             "10:00": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": true
+                 },
+                 "driving": {
+                   "enabled": false
+                 }
+               }
+             },
+             "10:30": {
+               "capabilities": {
+                 "general_volunteering": {
+                   "enabled": false
+                 },
+                 "driving": {
+                   "enabled": true
+                 }
+               }
+             }
+           }
+         }
+       }
+     },
     "auth": {
       "type": "{{AUTH_TYPE}}",
       "token": "{{SESSION_TOKEN}}"
