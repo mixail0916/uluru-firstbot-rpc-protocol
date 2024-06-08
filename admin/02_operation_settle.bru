@@ -1,0 +1,31 @@
+meta {
+  name: Operation Settle
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_ADMIN_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:operation:settle",
+    "version": 1,
+    "params": {
+		  "operation_id": "65f92ad4bdd570a9b8cde641"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE_HLOPS}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

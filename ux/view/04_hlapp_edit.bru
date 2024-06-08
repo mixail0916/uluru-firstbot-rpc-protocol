@@ -1,0 +1,45 @@
+meta {
+  name: HLApp - Edit
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlapp:supply:view:edit",
+    "version": 1,
+    "params": {
+	    "supply_view_id": "65e02461543492de714f60e6",
+		  "bme_id": "65de8a94e251152795b13328",
+		  "status": [
+			  "new",
+			  "open",
+			  "claimed"
+		  ],
+		  "vt_item": [
+			  "65de8aeb22f413bdd0cacfb6"
+		  ],
+		  "catalog_ownership": [],
+		  "catalog_membership": ["65de8aece251152795b133e9"],
+
+		  "availability_days_week_current": ["sun", "mon", "tue"],
+		  "availability_days_week_next": ["sun", "mon", "tue"]
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

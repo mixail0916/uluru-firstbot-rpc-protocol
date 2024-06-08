@@ -1,0 +1,31 @@
+meta {
+  name: Shortcut - List
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlapp:shortcut:list",
+    "version": 1,
+   	"params": {
+   		"next_page": null
+   	},
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

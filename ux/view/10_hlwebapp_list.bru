@@ -1,0 +1,31 @@
+meta {
+  name: HLWebApp - List
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlwebapp:supply:view:list",
+    "version": 1,
+    "params": {
+      "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

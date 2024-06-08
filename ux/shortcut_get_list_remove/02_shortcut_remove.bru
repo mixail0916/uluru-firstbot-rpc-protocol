@@ -1,0 +1,31 @@
+meta {
+  name: Shortcut - Remove
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlapp:shortcut:remove",
+    "version": 1,
+    "params": {
+	  	"shortcut_id": "65e4e892fb36922197c82e77"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

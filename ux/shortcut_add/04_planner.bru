@@ -1,0 +1,32 @@
+meta {
+  name: Planner
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlapp:shortcut:add",
+    "version": 1,
+    "params": {
+        "bme_id": "65e3eb9cf71ef2afc91cd8e6",
+      "target_type": "planner"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

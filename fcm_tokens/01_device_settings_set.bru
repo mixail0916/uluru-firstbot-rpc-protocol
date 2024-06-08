@@ -1,0 +1,36 @@
+meta {
+  name: Device settings set
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "hlapp:device:settings:set",
+    "version": 1,
+    "params": {
+      "token": "elF1I4VOSwuxdWyX40dig1:APA91bGE0j7VrklnzQIAn9j1rDJgLX1PKmTLuWSQ-8BuiSxeLFicQwaRwbd3HKQovlYmO1eaZIl6tB3ggyXBfSsprkbEP7py3GNNMt93z37jOOSrYRcx18uan3dSkrBGUxf_RTOGYhP0",
+      "settings": {
+        "notifications": {
+          "all": true
+        }
+      }
+    },
+    "auth": {
+       "type": "{{AUTH_TYPE}}",
+       "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

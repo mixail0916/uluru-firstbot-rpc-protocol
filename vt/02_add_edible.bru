@@ -1,0 +1,32 @@
+meta {
+  name: 🖥️ Add Edible
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "vt:edible:add",
+    "version": 1,
+    "params": {
+	    "parent_id": "661ca46105570fdb2bf8a37e",
+		  "title": "Apple"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}
