@@ -1,0 +1,43 @@
+meta {
+  name: Meeting Onsite - Network
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:attribute:set",
+    "version": 1,
+    "params": {
+      "ref_bme_id": "6651be8f86bd50579bfd9f70",
+		  "action_id": "665459208827e4a6f86f0c2c",
+		  "action_step_id": "66546163128937cea97821fe",
+		  "attributes": {
+			  "agenda": "some agengdfszfxghfdsfghdвымкпеa",
+			  "site": {
+					"bme_id": "6651be8c86bd50579bfd9f63"
+			  },
+			  "duration": {
+				  "hours": 1,
+				  "minutes": 30
+			  }
+		  }
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

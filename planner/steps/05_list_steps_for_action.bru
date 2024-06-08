@@ -1,0 +1,35 @@
+meta {
+  name: List steps - for action
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:list",
+    "version": 1,
+    "params": {
+	    "list_type": "for_action",
+		  "ref_bme_id": "6651be8f86bd50579bfd9f70",
+		  "status": ["active"],
+		  "action_id": "6654a507560e05b10cc8a87e",
+		  "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

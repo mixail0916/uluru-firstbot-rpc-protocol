@@ -1,0 +1,33 @@
+meta {
+  name: Edit action
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:edit",
+    "version": 1,
+    "params": {
+	    "ref_bme_id": "65fb7ccfdc6d2a4f97386c03",
+		  "action_id": "65fcb8b64d8e3ae4f812e1db",
+		  "description": "Food pickup from Farm"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

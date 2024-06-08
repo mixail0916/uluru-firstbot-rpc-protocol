@@ -1,0 +1,33 @@
+meta {
+  name: Add step
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:add",
+    "version": 1,
+    "params": {
+      "ref_bme_id": "6651be8c86bd50579bfd9f63",
+      "action_id": "665f347c68b2af30d5864e65",
+      "step_name": "transport_regional"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

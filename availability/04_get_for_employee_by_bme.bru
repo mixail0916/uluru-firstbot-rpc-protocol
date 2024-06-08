@@ -1,0 +1,35 @@
+meta {
+  name: Get - For Employee, By BME
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:availability:get",
+    "version": 1,
+    "params": {
+	    "availability_type": "for_employee_by_bme",
+		  "year": 2024,
+		  "month": 1,
+		  "bme_id": "662451c4f259eb5761cb381b",
+		  "user_id": "661fe403325bada6aad0d98b"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

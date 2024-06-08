@@ -1,0 +1,33 @@
+meta {
+  name: Add assignment complete
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:assignment:complete",
+    "version": 1,
+    "params": {
+	    "action_step_assignment_id": "664b19d9ccd492dd6dd018e4",
+		  "action_id": "664b033357d7603dfbff0e5a",
+		  "action_step_id": "664b19929171e2612e33959b"
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

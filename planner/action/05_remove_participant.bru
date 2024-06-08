@@ -1,0 +1,33 @@
+meta {
+  name: Remove participant
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:participant:list",
+    "version": 1,
+    "params": {
+		  "ref_bme_id": "66505537d8f3f7626e07da81",
+		  "action_id": "665065e1c8096c918bab0fbd",
+		  "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

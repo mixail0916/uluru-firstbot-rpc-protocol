@@ -1,0 +1,37 @@
+meta {
+  name: List - Num users on date timeslot
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:availability:list",
+    "version": 1,
+    "params": {
+      "list_type": "num_users_on_date_timeslot",
+      "bme_id": "660e193057798388c05e530b",
+      "date": "2024-04-25",
+      "capabilities": [
+      	"general_volunteering",
+      	"driving"
+      ]
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}

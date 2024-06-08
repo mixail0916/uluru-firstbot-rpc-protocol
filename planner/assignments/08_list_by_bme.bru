@@ -1,0 +1,36 @@
+meta {
+  name: List - by BME
+  type: http
+  seq: 8
+}
+
+post {
+  url: {{API_ROOT}}
+  body: json
+  auth: none
+}
+
+headers {
+  content-type: application/json
+}
+
+body:json {
+  {
+    "jsonrpc": "2.0+hl",
+    "id": 1,
+    "method": "cdr:action:step:assignment:list",
+    "version": 1,
+    "params": {
+      "list_type": "by_bme",
+      "ref_bme_id": "66640c4c7c9a4fd5163e7bfb",
+      "action_id": "66640ee27c9a4fd5163e7ff6",
+      "action_step_id": "66640f087c9a4fd5163e7ffb",
+      "date": "2024-07-15",
+      "next_page": null
+    },
+    "auth": {
+      "type": "{{AUTH_TYPE}}",
+      "token": "{{SESSION_TOKEN}}"
+    }
+  }
+}
