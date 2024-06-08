@@ -27,6 +27,7 @@ body {
 
 
 script:post-response {
+  bru.setVar("AUTH_TYPE", "hlops");
   bru.setVar("REPLY_TOKEN", res.body.result.reply_token);
   bru.setVar("RECHALLENGE_TOKEN", res.body.result.rechallenge_token);
 }

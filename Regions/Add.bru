@@ -1,25 +1,29 @@
 meta {
-  name: List
+  name: Add
   type: http
-  seq: 1
+  seq: 2
 }
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "cdr:region:list",
+    "method": "cdr:region:add",
     "version": 1,
     "params": {
-   "continent_code": ["oceania", "northamerica"]
+      "title": "City of Hamilton22",
+      "country_code": "CAN",
+      "tz": "America/Winnipeg"
     },
     "auth": {
       "type": "{{AUTH_TYPE}}",

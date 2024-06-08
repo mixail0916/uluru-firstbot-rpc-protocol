@@ -1,22 +1,24 @@
 meta {
-  name: Sign out Hlapp
+  name: Get
   type: http
   seq: 1
 }
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "hlapp:sign_out",
+    "method": "cdr:user:get",
     "version": 1,
     "params": {},
     "auth": {
@@ -25,8 +27,3 @@ body {
     }
   }
 }
-
-
-
-
-

@@ -6,13 +6,15 @@ meta {
 
 post {
   url: {{API_ADMIN_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
@@ -26,15 +28,7 @@ body {
   }
 }
 
-
-
 script:post-response {
   bru.setVar("HL_SESSION_TOKEN", res.body.result.token);
     bru.setVar("AUTH_TYPE", res.body.result.type);
 }
-
-
-
-
-
-

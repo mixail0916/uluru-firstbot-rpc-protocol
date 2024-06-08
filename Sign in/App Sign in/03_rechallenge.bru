@@ -1,38 +1,33 @@
 meta {
-  name: Sign In Init Webapp
+  name: Rechallenge
   type: http
-  seq: 1
+  seq: 3
 }
 
 post {
   url: {{API_ROOT}}
+  body: json
+  auth: none
 }
 
 headers {
   content-type: application/json
 }
 
-body {
+body:json {
   {
     "jsonrpc": "2.0+hl",
     "id": 1,
-    "method": "hlwebapp:sign_in:init",
+    "method": "hlapp:sign_in:rechallenge",
     "version": 1,
     "params": {
-      "email": "bot@h.l"
+     "rechallenge_token": "{{RECHALLENGE_TOKEN}}"
     },
     "auth": {}
   }
-}
-
-tests {
-  test("status must be 200", function() {
-    expect(response.status).to.eql(200);
-  });
 }
 
 script:post-response {
   bru.setVar("REPLY_TOKEN", res.body.result.reply_token);
   bru.setVar("RECHALLENGE_TOKEN", res.body.result.rechallenge_token);
 }
-
